@@ -4,7 +4,6 @@ RSpec.describe Pokemon, type: :model do
   it { should validate_presence_of :number }
   it { should validate_presence_of :name }
   it { should validate_presence_of :type_1 }
-  it { should validate_presence_of :type_2 }
   it { should validate_presence_of :total }
   it { should validate_presence_of :hp }
   it { should validate_presence_of :attack }

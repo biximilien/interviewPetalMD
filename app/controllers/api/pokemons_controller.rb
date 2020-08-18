@@ -1,25 +1,27 @@
 module API
   class PokemonsController < ApplicationController
 
+    respond_to :json
+
     before_action :set_pokemon, only: [:show, :update, :destroy]
 
     def index
       @pokemons = Pokemon.all.page(params[:page])
-      render json: @pokemons
+      respond_with :api, @pokemons
     end
 
     def show
-      render json: @pokemon
+      respond_with :api, @pokemon
     end
 
     def create
       @pokemon = Pokemon.create(pokemon_params)
-      render json: @pokemon
+      respond_with :api, @pokemon
     end
 
     def update
       @pokemon.update(pokemon_params)
-      render json: @pokemon
+      respond_with :api, @pokemon
     end
 
     def destroy
