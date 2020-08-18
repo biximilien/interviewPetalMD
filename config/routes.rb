@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # authentication
   devise_for :users
 
-  # pokemons
-  resources :pokemons, only: [:index, :show, :create, :update, :destroy]
+  namespace :api do
+    # pokemons
+    resources :pokemons, only: [:index, :show, :create, :update, :destroy]
+  end
 
 end

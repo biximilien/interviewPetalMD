@@ -3,19 +3,31 @@ require 'json'
 
 RSpec.describe "Pokemons", type: :request do
 
-  describe "GET /pokemons" do
+  describe "GET /api/pokemons" do
     it "returns http success" do
-      get "/pokemons"
+      get "/api/pokemons"
       expect(response).to have_http_status(:success)
       data = JSON.parse(response.body)
       expect(data).to be_an Array
-      expect(data.count).to eq 800
+      expect(data.count).to eq 50
     end
   end
 
-  describe "GET /pokemons/1" do
+  context "when a page is given" do
+    describe "GET /api/pokemons" do
+      it "returns http success the paginated list" do
+        get "/api/pokemons", params: { page: 5 }
+        expect(response).to have_http_status(:success)
+        data = JSON.parse(response.body)
+        expect(data).to be_an Array
+        expect(data.count).to eq 50
+      end
+    end
+  end
+
+  describe "GET /api/pokemons/1" do
     it "returns http success" do
-      get "/pokemons/1"
+      get "/api/pokemons/1"
       expect(response).to have_http_status(:success)
       data = JSON.parse(response.body)
       expect(data).to be_a Hash
@@ -25,7 +37,7 @@ RSpec.describe "Pokemons", type: :request do
 
   describe "POST /" do
     it "returns http success" do
-      post "/pokemons", params: {
+      post "/api/pokemons", params: {
         pokemon: {
           number: '722',
           name: 'Pikablu',
@@ -46,23 +58,23 @@ RSpec.describe "Pokemons", type: :request do
     end
   end
 
-  describe "PUT /pokemons/1" do
+  describe "PUT /api/pokemons/1" do
     it "returns http success" do
-      put "/pokemons/1", params: { pokemon: { name: 'Bubasaur' }}
+      put "/api/pokemons/1", params: { pokemon: { name: 'Bubasaur' }}
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "PATCH /pokemons/1" do
+  describe "PATCH /api/pokemons/1" do
     it "returns http success" do
-      patch "/pokemons/1", params: { pokemon: { name: 'Bubusaur' }}
+      patch "/api/pokemons/1", params: { pokemon: { name: 'Bubusaur' }}
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "DELETE /pokemons/722" do
+  describe "DELETE /api/pokemons/722" do
     it "returns http success (no content)" do
-      delete "/pokemons/722"
+      delete "/api/pokemons/722"
       expect(response).to have_http_status(:no_content)
     end
   end

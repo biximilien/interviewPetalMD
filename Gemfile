@@ -40,15 +40,27 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Authentication
 gem 'devise'
+
+# Authorization
 gem 'cancancan'
+
+# Procfile
 gem 'foreman'
+
+# Haml <3
 gem 'haml'
 
+# Pagination
+gem 'kaminari'
+
 group :development, :test do
+  # RSpec test framework
   gem 'rspec-rails', '~> 4.0.0'
 end
 
 group :test do
+  # ShouldaMatchers test helpers
   gem 'shoulda-matchers', '~> 4.0'
 end
