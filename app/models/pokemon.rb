@@ -12,9 +12,6 @@ class Pokemon < ApplicationRecord
   validates :type_1,
     presence: true
 
-  validates :type_2,
-    presence: true
-
   validates :total,
     presence: true
 
