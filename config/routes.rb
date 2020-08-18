@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+
+  # root
   root to: 'pages#home'
+
+  # authentication
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # pokemons
+  resources :pokemons, only: [:index, :show, :create, :update]
+
 end
