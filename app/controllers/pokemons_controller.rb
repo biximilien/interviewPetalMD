@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
 
-  before_action :set_pokemon, only: [:show, :update]
+  before_action :set_pokemon, only: [:show, :update, :destroy]
 
   def index
     @pokemons = Pokemon.all
@@ -21,6 +21,11 @@ class PokemonsController < ApplicationController
     render json: @pokemon
   end
 
+  def destroy
+    @pokemon.destroy
+    head :no_content
+  end
+
   private
 
     def set_pokemon
@@ -30,5 +35,5 @@ class PokemonsController < ApplicationController
     def pokemon_params
       params.require(:pokemon).permit(:number, :name, :type_1, :type_2, :total, :hp, :attack, :defense, :sp_atk, :sp_def, :speed, :generation, :legendary)
     end
-    
+
 end

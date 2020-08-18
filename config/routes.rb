@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   # pokemons
-  resources :pokemons, only: [:index, :show, :create, :update]
+  resources :pokemons, only: [:index, :show, :create, :update, :destroy]
 
 end
