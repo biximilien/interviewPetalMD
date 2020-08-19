@@ -32,7 +32,7 @@ function updatePokes(form) {
 
 function appendPokemon(tbody, pokemon) {
   tbody.append(`
-    <tr>
+    <tr id="pokemon-row-${pokemon.id}" data-pokemon-id="${pokemon.id}">
       <td>${pokemon.number}</td>
       <td>${pokemon.name}</td>
       <td>${pokemon.type_1}</td>
@@ -47,8 +47,8 @@ function appendPokemon(tbody, pokemon) {
       <td>${pokemon.generation}</td>
       <td>${pokemon.legendary == true ? 'Yes' : 'No'}</td>
       <td>
-        <form>
-          <input type="button" value="Delete" class="button is-danger is-small">
+        <form onsubmit="deletePoke(this)">
+          <input type="submit" value="Delete" class="button is-danger is-small">
         </form>
       </td>
     </tr>
@@ -87,4 +87,20 @@ function pokemonFormData() {
     'pokemon[generation]': $('input[name="pokemon[generation]"]').val(),
     'pokemon[legendary]': $('input[name="pokemon[legendary]"]').val()
   }
+}
+
+function deletePoke(form) {
+  if (event) {
+    event.preventDefault();
+  }
+
+  var $row = $(form).parent('td').parent('tr');
+  var pokemonId = $row.data('pokemon-id');
+
+  $.ajax({
+    url: `/api/pokemons/${pokemonId}`,
+    method: 'delete',
+    success: (data, status, xhr) => { $row.remove() },
+    error: (xhr, status, err) => { console.log(err) }
+  });
 }
