@@ -37,12 +37,12 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"0f1a30a7bb3b5958aa43b7aa532c804e\"",
+        "ETag": "W/\"8f7ed77d5b4c9d60f7e4a2e41338b4ad\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d47a7e1c-55ba-4eaa-bea1-bf0c500793f5",
-        "X-Runtime": "0.007215",
+        "X-Request-Id": "e836ccc4-fb5c-401b-97c6-4f66c940ea82",
+        "X-Runtime": "0.006993",
         "Vary": "Origin",
-        "Content-Length": "265"
+        "Content-Length": "266"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

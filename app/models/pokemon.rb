@@ -14,28 +14,15 @@ class Pokemon < ApplicationRecord
   validates :type_1,
     presence: true
 
-  validates :total,
-    presence: true
-
-  validates :hp,
-    presence: true
-
-  validates :attack,
-    presence: true
-
-  validates :defense,
-    presence: true
-
-  validates :sp_atk,
-    presence: true
-
-  validates :sp_def,
-    presence: true
-
-  validates :speed,
-    presence: true
-
   validates :generation,
     presence: true
+
+  before_validation :compute_total
+
+  protected
+
+    def compute_total
+      self.total = hp + attack + defense + sp_atk + sp_def + speed
+    end
 
 end

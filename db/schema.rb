@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 2020_08_18_210831) do
     t.string "name", default: "", null: false
     t.string "type_1", default: "", null: false
     t.string "type_2"
-    t.integer "total", null: false
-    t.integer "hp", null: false
-    t.integer "attack", null: false
-    t.integer "defense", null: false
-    t.integer "sp_atk", null: false
-    t.integer "sp_def", null: false
-    t.integer "speed", null: false
+    t.integer "total", default: 0, null: false
+    t.integer "hp", default: 0, null: false
+    t.integer "attack", default: 0, null: false
+    t.integer "defense", default: 0, null: false
+    t.integer "sp_atk", default: 0, null: false
+    t.integer "sp_def", default: 0, null: false
+    t.integer "speed", default: 0, null: false
     t.integer "generation", null: false
     t.boolean "legendary", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
