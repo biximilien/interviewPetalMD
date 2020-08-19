@@ -2,7 +2,7 @@ $(document).ready(function() {
   updatePokes();
 })
 
-function updatePokes(form) {
+function updatePokes(form, page = 1) {
   if (event) {
     event.preventDefault();
   }
@@ -13,18 +13,24 @@ function updatePokes(form) {
   if (q === "") {
     $.ajax({
       url: '/api/pokemons',
+      data: { page: page },
       success: (data, status, xhr) => {
+        $(document).data('page', page);
         tbody.empty()
-        data.forEach((pokemon) => { appendPokemon(tbody, pokemon) });
+        data.pokemons.forEach((pokemon) => { appendPokemon(tbody, pokemon) });
+        renderPagination(data.meta);
       }
     });
   } else {
     $.ajax({
       url: '/api/pokemons',
-      data: { 'q': q },
+      data: { q: q, page: page },
       success: (data, status, xhr) => {
+        $(document).data('q', q);
+        $(document).data('page', page);
         tbody.empty()
-        data.forEach((pokemon) => { appendPokemon(tbody, pokemon) });
+        data.pokemons.forEach((pokemon) => { appendPokemon(tbody, pokemon) });
+        renderPagination(data.meta);
       }
     });
   }
@@ -103,4 +109,31 @@ function deletePoke(form) {
     success: (data, status, xhr) => { $row.remove() },
     error: (xhr, status, err) => { console.log(err) }
   });
+}
+
+function goToPage(page) {
+  if (page == null) return;
+  updatePokes(null, page);
+}
+
+function renderPagination(meta) {
+  var total_pages = meta.total_pages;
+  var current_page = meta.current_page;
+  var next_page = meta.next_page;
+  var prev_page = meta.prev_page;
+
+  var pagination = `
+    <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+      <a class="pagination-previous" onclick="goToPage(${prev_page})">Previous</a>
+      <a class="pagination-next" onclick="goToPage(${next_page})">Next page</a>
+      <ul class="pagination-list">
+  `;
+
+  for (var i = 1; i <= total_pages; i++) {
+    pagination += `<li><a class="pagination-link ${i == current_page ? 'is-current' : ''}" aria-label="Goto page ${i}" onclick="goToPage(${i})">${i}</a></li>`;
+  }
+
+  pagination += "</ul></nav>";
+
+  $('#pagination-box > nav').replaceWith(pagination);
 }

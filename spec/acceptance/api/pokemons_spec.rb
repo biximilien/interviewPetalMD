@@ -5,8 +5,6 @@ resource "Pokemons" do
 
   explanation "Pokemons resource"
 
-  # header "Content-Type", "application/json"
-
   get "/api/pokemons" do
     parameter :page, 'Page to view'
     parameter :q, 'Search query'

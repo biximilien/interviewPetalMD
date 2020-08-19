@@ -116,43 +116,43 @@
           <form onsubmit="createPoke(this)">
             <tr>
               <td>
-                <input type="text" name="pokemon[number]" placeholder="#" class="input">
+                <input type="text" name="pokemon[number]" placeholder="#" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[name]" placeholder="Name" class="input">
+                <input type="text" name="pokemon[name]" placeholder="Name" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[type_1]" placeholder="Type 1" class="input">
+                <input type="text" name="pokemon[type_1]" placeholder="Type 1" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[type_2]" placeholder="Type 2" class="input">
+                <input type="text" name="pokemon[type_2]" placeholder="Type 2" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[total]" placeholder="Total" class="input">
+                <input type="text" name="pokemon[total]" placeholder="Total" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[hp]" placeholder="HP" class="input">
+                <input type="text" name="pokemon[hp]" placeholder="HP" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[attack]" placeholder="Attack" class="input">
+                <input type="text" name="pokemon[attack]" placeholder="Attack" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[defense]" placeholder="Defense" class="input">
+                <input type="text" name="pokemon[defense]" placeholder="Defense" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[sp_atk]" placeholder="Sp. Atk." class="input">
+                <input type="text" name="pokemon[sp_atk]" placeholder="Sp. Atk." class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[sp_def]" placeholder="Sp. Def." class="input">
+                <input type="text" name="pokemon[sp_def]" placeholder="Sp. Def." class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[speed]" placeholder="Speed" class="input">
+                <input type="text" name="pokemon[speed]" placeholder="Speed" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[generation]" placeholder="Generation" class="input">
+                <input type="text" name="pokemon[generation]" placeholder="Generation" class="input is-small">
               </td>
               <td>
-                <input type="text" name="pokemon[legendary]" placeholder="Legendary" class="input">
+                <input type="text" name="pokemon[legendary]" placeholder="Legendary" class="input is-small">
               </td>
               <td>
                 <input type="submit" value="Create" class="button is-info is-small">
@@ -161,6 +161,16 @@
           </form>
         </tfoot>
       </table>
+
+      <div id="pagination-box" class="box">
+        <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+          <a class="pagination-previous">Previous</a>
+          <a class="pagination-next">Next page</a>
+          <ul class="pagination-list">
+            <li><a class="pagination-link" aria-label="Goto page 1" onclick="goToPage(1)">1</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </section>
 

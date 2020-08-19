@@ -8,8 +8,8 @@ RSpec.describe "Pokemons", type: :request do
       get "/api/pokemons"
       expect(response).to have_http_status(:success)
       data = JSON.parse(response.body)
-      expect(data).to be_an Array
-      expect(data.count).to eq 50
+      expect(data).to be_an Hash
+      expect(data['pokemons'].count).to eq 50
     end
   end
 
@@ -19,8 +19,8 @@ RSpec.describe "Pokemons", type: :request do
         get "/api/pokemons", params: { page: 5 }
         expect(response).to have_http_status(:success)
         data = JSON.parse(response.body)
-        expect(data).to be_an Array
-        expect(data.count).to eq 50
+        expect(data).to be_an Hash
+        expect(data['pokemons'].count).to eq 50
       end
     end
   end

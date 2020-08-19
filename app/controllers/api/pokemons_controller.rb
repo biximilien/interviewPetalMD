@@ -11,7 +11,11 @@ module API
       else
         @pokemons = Pokemon.all
       end
-      @pokemons = @pokemons.page(params[:page])
+      @paged_pokemons = @pokemons.page(params[:page])
+      @total_pages = @paged_pokemons.total_pages
+      @current_page = @paged_pokemons.current_page
+      @next_page = @paged_pokemons.next_page
+      @prev_page = @paged_pokemons.prev_page
       respond_with :api, @pokemons
     end
 
