@@ -9,8 +9,9 @@ module API
       if params[:q]
         @pokemons = Pokemon.search(params[:q]).records
       else
-        @pokemons = Pokemon.all.page(params[:page])
+        @pokemons = Pokemon.all
       end
+      @pokemons = @pokemons.page(params[:page])
       respond_with :api, @pokemons
     end
 
