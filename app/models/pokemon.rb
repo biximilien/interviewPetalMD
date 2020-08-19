@@ -38,7 +38,4 @@ class Pokemon < ApplicationRecord
   validates :generation,
     presence: true
 
-  validates :legendary,
-    presence: true
-
 end

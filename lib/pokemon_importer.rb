@@ -23,7 +23,7 @@ class PokemonImporter
         sp_def: row['Sp. Def'],
         speed: row['Speed'],
         generation: row['Generation'],
-        legendary: (row['Legendary'] == 'True' ? true : false)
+        legendary: !!(/True/i =~ row['Legendary'])
       }
     end
     Pokemon.create!(pokes)

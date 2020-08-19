@@ -12,7 +12,6 @@ RSpec.describe Pokemon, type: :model do
   it { should validate_presence_of :sp_def }
   it { should validate_presence_of :speed }
   it { should validate_presence_of :generation }
-  it { should validate_presence_of :legendary }
 
   describe ".search" do
     subject { Pokemon }
