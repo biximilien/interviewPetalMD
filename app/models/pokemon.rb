@@ -1,4 +1,6 @@
 class Pokemon < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   # Pagination (50 pokemons per page)
   paginates_per 50

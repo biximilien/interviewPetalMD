@@ -73,3 +73,6 @@ end
 
 # Load seeds
 require_relative 'support/load_seeds'
+
+# ElasticSearch
+require_relative 'support/elasticsearch'

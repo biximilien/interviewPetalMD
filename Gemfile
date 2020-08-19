@@ -64,3 +64,7 @@ group :test do
   # ShouldaMatchers test helpers
   gem 'shoulda-matchers', '~> 4.0'
 end
+
+# ElasticSearch
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'

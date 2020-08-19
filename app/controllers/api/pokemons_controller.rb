@@ -6,7 +6,11 @@ module API
     before_action :set_pokemon, only: [:show, :update, :destroy]
 
     def index
-      @pokemons = Pokemon.all.page(params[:page])
+      if params[:q]
+        @pokemons = Pokemon.search(params[:q]).records
+      else
+        @pokemons = Pokemon.all.page(params[:page])
+      end
       respond_with :api, @pokemons
     end
 

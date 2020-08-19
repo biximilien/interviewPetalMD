@@ -13,4 +13,13 @@ RSpec.describe Pokemon, type: :model do
   it { should validate_presence_of :speed }
   it { should validate_presence_of :generation }
   it { should validate_presence_of :legendary }
+
+  describe ".search" do
+    subject { Pokemon }
+    it "searches for matching Pokemons" do
+      records = subject.search('Pikachu').records
+      expect(records).not_to be nil
+      expect(records.first.name).to eq 'Pikachu'
+    end
+  end
 end
