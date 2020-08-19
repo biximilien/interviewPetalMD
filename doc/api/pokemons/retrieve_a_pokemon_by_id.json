@@ -3,12 +3,12 @@
   "resource_explanation": "Pokemons resource",
   "http_method": "GET",
   "route": "/api/pokemons/1",
-  "description": "Retrieve a Pokemon by #",
+  "description": "Retrieve a Pokemon by id",
   "explanation": null,
   "parameters": [
     {
-      "name": "number",
-      "description": "Pokemon number"
+      "name": "id",
+      "description": "Pokemon id"
     }
   ],
   "response_fields": [
@@ -17,14 +17,13 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/api/pokemons/1?number=1",
+      "request_path": "/api/pokemons/1",
       "request_body": null,
       "request_headers": {
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "number": "1"
       },
       "request_content_type": null,
       "response_status": 200,
@@ -40,8 +39,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"0f1a30a7bb3b5958aa43b7aa532c804e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "116b6902-bcd6-4cac-8501-dcf9e706ea43",
-        "X-Runtime": "0.007275",
+        "X-Request-Id": "d47a7e1c-55ba-4eaa-bea1-bf0c500793f5",
+        "X-Runtime": "0.007215",
         "Vary": "Origin",
         "Content-Length": "265"
       },

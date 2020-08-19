@@ -40,8 +40,8 @@
           "method": "get"
         },
         {
-          "description": "Retrieve a Pokemon by #",
-          "link": "pokemons/retrieve_a_pokemon_by_#.json",
+          "description": "Retrieve a Pokemon by id",
+          "link": "pokemons/retrieve_a_pokemon_by_id.json",
           "groups": "all",
           "route": "/api/pokemons/1",
           "method": "get"

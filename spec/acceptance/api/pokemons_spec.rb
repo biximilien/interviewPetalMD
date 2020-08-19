@@ -26,10 +26,10 @@ resource "Pokemons" do
   end
 
   get "/api/pokemons/1" do
-    parameter :number, 'Pokemon number'
+    parameter :id, 'Pokemon id'
 
-    example "Retrieve a Pokemon by #" do
-      do_request(number: 1)
+    example "Retrieve a Pokemon by id" do
+      do_request
       expect(status).to eq 200
     end
   end
