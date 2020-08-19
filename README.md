@@ -1,7 +1,13 @@
-# Interview PetalMD - Pokemons
+# Interview PetalMD - Pokemons API
 
-A simple REST api with CRUD actions to query and display pokemons.
+A simple REST API with CRUD actions to query and display Pokemons.
 
+This is the technical exercise for an interview at PetalMD by Maxime 'biximilien'
+Gauthier.
+
+Check the [Sample App](https://petalmd-pokemons.herokuapp.com)
+
+API Summary
 ```
 Pokemons
   GET /api/pokemons
@@ -23,26 +29,4 @@ Pokemons
     delete a Pokemon
 ```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+View the full [API Documentation](https://petalmd-pokemons.herokuapp.com/api/docs)
