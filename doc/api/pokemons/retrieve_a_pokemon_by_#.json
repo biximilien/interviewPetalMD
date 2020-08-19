@@ -1,0 +1,52 @@
+{
+  "resource": "Pokemons",
+  "resource_explanation": "Pokemons resource",
+  "http_method": "GET",
+  "route": "/api/pokemons/1",
+  "description": "Retrieve a Pokemon by #",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "number",
+      "description": "Pokemon number"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/pokemons/1?number=1",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "number": "1"
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"0f1a30a7bb3b5958aa43b7aa532c804e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "116b6902-bcd6-4cac-8501-dcf9e706ea43",
+        "X-Runtime": "0.007275",
+        "Vary": "Origin",
+        "Content-Length": "265"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

@@ -72,9 +72,9 @@ RSpec.describe "Pokemons", type: :request do
     end
   end
 
-  describe "DELETE /api/pokemons/722" do
+  describe "DELETE /api/pokemons/150" do
     it "returns http success (no content)" do
-      delete "/api/pokemons/722"
+      delete "/api/pokemons/150"
       expect(response).to have_http_status(:no_content)
     end
   end

@@ -76,3 +76,8 @@ require_relative 'support/load_seeds'
 
 # ElasticSearch
 require_relative 'support/elasticsearch'
+
+# Apitome
+RspecApiDocumentation.configure do |config|
+  config.format = :json
+end

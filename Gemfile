@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# SASS
+gem 'sassc-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -68,3 +71,9 @@ end
 # ElasticSearch
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+
+# API documentation
+gem 'rspec_api_documentation'
+# Doc Viewer
+# gem 'apitome'
+gem "apitome", github: "jejacks0n/apitome" # fix issue #114
