@@ -17,7 +17,19 @@ class Pokemon < ApplicationRecord
   validates :generation,
     presence: true
 
+  # ensure total is calculated from other stats
   before_validation :compute_total
+
+  def legendary=(bool)
+    case bool
+    when 'yes', 'Yes'
+      super true
+    when 'no', 'No'
+      super false
+    else
+      super bool
+    end
+  end
 
   protected
 

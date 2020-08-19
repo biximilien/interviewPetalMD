@@ -53,4 +53,33 @@ RSpec.describe Pokemon, type: :model do
       expect(subject.total).to eq 600
     end
   end
+
+  describe "#legendary" do
+    subject {
+      Pokemon.new(
+        number: 777,
+        name: 'Testimon',
+        type_1: 'Bug',
+        hp: 100,
+        attack: 100,
+        defense: 100,
+        sp_atk: 100,
+        sp_def: 100,
+        speed: 100,
+        generation: 77
+      )
+    }
+
+    it "shoulds save 'Yes' as `true`" do
+      subject.legendary = 'Yes'
+      subject.save!
+      expect(subject.legendary).to eq true
+    end
+
+    it "shoulds save 'No' as `false`" do
+      subject.legendary = 'No'
+      subject.save!
+      expect(subject.legendary).to eq false
+    end
+  end
 end
