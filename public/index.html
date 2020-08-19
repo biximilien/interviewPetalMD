@@ -17,14 +17,11 @@
 
   <style type="text/css">
     html {
-      background: #82cafa;
-      background-repeat: repeat;
-      background-attachment: scroll;
-      background-image: none;
+      background-color: #82cafa;
+    }
 
-      background-image: url(background.png), url(background.png);
-      background-repeat: repeat-x, repeat;
-      background-attachment: fixed;
+    input::placeholder {
+      color: black !important;
     }
   </style>
 </head>
@@ -56,8 +53,8 @@
   </section>
 
   <section class="section">
-    <div class="container">
-      <h1 class="title">Example</h1>
+    <div class="container has-text-light">
+      <h1 class="title has-text-light">Example</h1>
 
       <p>
         This sample application demonstrates the API CRUD actions with a table
@@ -100,6 +97,7 @@
             <th>Type 1</th>
             <th>Type 2</th>
             <th>Total</th>
+            <th>HP</th>
             <th>Attack</th>
             <th>Defense</th>
             <th>Sp. Atk.</th>
@@ -115,7 +113,7 @@
         </tbody>
 
         <tfoot>
-          <form>
+          <form onsubmit="createPoke(this)">
             <tr>
               <td>
                 <input type="text" name="pokemon[number]" placeholder="#" class="input">
@@ -131,6 +129,9 @@
               </td>
               <td>
                 <input type="text" name="pokemon[total]" placeholder="Total" class="input">
+              </td>
+              <td>
+                <input type="text" name="pokemon[hp]" placeholder="HP" class="input">
               </td>
               <td>
                 <input type="text" name="pokemon[attack]" placeholder="Attack" class="input">
