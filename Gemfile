@@ -77,3 +77,7 @@ gem 'rspec_api_documentation'
 # Doc Viewer
 # gem 'apitome'
 gem "apitome", github: "jejacks0n/apitome" # fix issue #114
+
+# Fix for Nokogiri security issue (nokogiri not an explicit dependency) 
+gem "nokogiri", ">= 1.11.0.rc4"
+
